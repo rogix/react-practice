@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { darken } from 'polished'
+import { darken, transparentize } from 'polished'
 
 export const TransactionForm = styled.form`
   h2 {
@@ -58,6 +58,12 @@ export const TransactionTypeDiv = styled.div`
 
 type RadioBoxButtonProps = {
   isActive: boolean;
+  activeColor: 'green' | 'red';
+}
+
+const colors = {
+  green: '#33cc95',
+  red: '#e52e4d'
 }
 
 export const RadioBoxButton = styled.button<RadioBoxButtonProps>`
@@ -65,7 +71,7 @@ export const RadioBoxButton = styled.button<RadioBoxButtonProps>`
   border: 1px solid #d7d7d7;
   border-radius: 0%.25rem;
 
-  background: ${(props) => props.isActive ? '#eee' : 'transparent'};
+  background: ${(props) => props.isActive ? transparentize(.9, colors[props.activeColor]) : 'transparent'};
 
   display: flex;
   align-items: center;
