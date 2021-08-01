@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const TransactionsTableDiv = styled.div`
   margin-top: 4rem;
@@ -29,10 +29,10 @@ export const TransactionsTableDiv = styled.div`
       &.deposit {
         color: var(--green);
       }
-      
+
       &.withdraw {
         color: var(--red);
       }
     }
   }
-`
+`;

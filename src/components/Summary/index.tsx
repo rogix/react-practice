@@ -1,8 +1,8 @@
-import incomeImg from "../../assets/income.svg"
-import outcomeImg from "../../assets/outcome.svg"
-import totalImg from "../../assets/total.svg"
+import incomeImg from '../../assets/income.svg';
+import outcomeImg from '../../assets/outcome.svg';
+import totalImg from '../../assets/total.svg';
 
-import { SummaryDiv } from "./styles";
+import { SummaryDiv } from './styles';
 
 export function Summary() {
   return (
@@ -29,5 +29,5 @@ export function Summary() {
         <strong>R$430,00</strong>
       </div>
     </SummaryDiv>
-  )
+  );
 }

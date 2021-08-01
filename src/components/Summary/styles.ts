@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SummaryDiv = styled.div`
   display: grid;
@@ -31,4 +31,4 @@ export const SummaryDiv = styled.div`
       color: var(--shape);
     }
   }
-`
+`;

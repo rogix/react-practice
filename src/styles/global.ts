@@ -91,4 +91,4 @@ export const GlobalStyle = createGlobalStyle`
       filter: brightness(0.8)
     }
   }
-`
+`;
