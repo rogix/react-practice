@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { darken, transparentize } from 'polished';
+import styled from 'styled-components'
+import { darken, transparentize } from 'polished'
 
 export const TransactionForm = styled.form`
   h2 {
@@ -47,24 +47,24 @@ export const TransactionForm = styled.form`
       filter: brightness(0.9);
     }
   }
-`;
+`
 
 export const TransactionTypeDiv = styled.div`
   margin: 1rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
-`;
+`
 
 type RadioBoxButtonProps = {
-  isActive: boolean;
-  activeColor: 'green' | 'red';
-};
+  isActive: boolean
+  activeColor: 'green' | 'red'
+}
 
 const colors = {
   green: '#33cc95',
   red: '#e52e4d',
-};
+}
 
 export const RadioBoxButton = styled.button<RadioBoxButtonProps>`
   height: 4rem;
@@ -97,4 +97,4 @@ export const RadioBoxButton = styled.button<RadioBoxButtonProps>`
     font-size: 1rem;
     color: var(--text-title);
   }
-`;
+`

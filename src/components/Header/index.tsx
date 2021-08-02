@@ -1,9 +1,9 @@
-import { Container, Content } from './styles';
-import logoImg from '../../assets/logo.svg';
+import { Container, Content } from './styles'
+import logoImg from '../../assets/logo.svg'
 
 type HeaderProps = {
-  onOpenNewTransactionModal: () => void;
-};
+  onOpenNewTransactionModal: () => void
+}
 
 export const Header = ({ onOpenNewTransactionModal }: HeaderProps) => {
   return (
@@ -15,5 +15,5 @@ export const Header = ({ onOpenNewTransactionModal }: HeaderProps) => {
         </button>
       </Content>
     </Container>
-  );
-};
+  )
+}

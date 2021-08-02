@@ -1,26 +1,19 @@
-import { useEffect, useState } from 'react';
-import { api } from '../../services/api';
-import { TransactionsTableDiv } from './styles';
+import { useContext } from 'react'
+import { TransactionsContext } from '../../TransactionsContext'
+import { TransactionsTableDiv } from './styles'
 
-interface Transactions {
-  id: number;
-  title: string;
-  amount: number;
-  type: string;
-  category: string;
-  createdAt: string;
+type Props = {
+  id: number
+  type: string
+  title: string
+  amount: number
+  category: string
+  createdAt: Date
 }
 
 export function TransactionsTable() {
-  const [transactions, setTransactions] = useState<Transactions[]>([]);
+  const transactions = useContext(TransactionsContext)
 
-  useEffect(() => {
-    api
-      .get('transactions')
-      .then(response => setTransactions(response.data.transactions));
-  }, []);
-
-  console.log(transactions);
   return (
     <TransactionsTableDiv>
       <table>
@@ -47,7 +40,7 @@ export function TransactionsTable() {
                 <td>{category}</td>
                 <td>
                   {createdAt}
-                  {/* { new Intl.DateTimeFormat('en-US').format(new Date(createdAt)) } */}
+                  {/* {new Intl.DateTimeFormat('en-US').format(new Date(createdAt))} */}
                 </td>
               </tr>
             ),
@@ -55,5 +48,5 @@ export function TransactionsTable() {
         </tbody>
       </table>
     </TransactionsTableDiv>
-  );
+  )
 }

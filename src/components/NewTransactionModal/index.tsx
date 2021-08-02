@@ -1,27 +1,27 @@
-import { FormEvent, useState } from 'react';
-import Modal from 'react-modal';
-import { RadioBoxButton, TransactionForm, TransactionTypeDiv } from './styles';
-import closeImg from '../../assets/close.svg';
-import outcomeImg from '../../assets/outcome.svg';
-import incomeImg from '../../assets/income.svg';
-import { api } from '../../services/api';
+import { FormEvent, useState } from 'react'
+import Modal from 'react-modal'
+import { RadioBoxButton, TransactionForm, TransactionTypeDiv } from './styles'
+import closeImg from '../../assets/close.svg'
+import outcomeImg from '../../assets/outcome.svg'
+import incomeImg from '../../assets/income.svg'
+import { api } from '../../services/api'
 
 type NewTransactionModalProps = {
-  isOpen: boolean;
-  onRequestClose: () => void;
-};
+  isOpen: boolean
+  onRequestClose: () => void
+}
 
 export function NewTransactionModal({
   isOpen,
   onRequestClose,
 }: NewTransactionModalProps) {
-  const [title, setTitle] = useState('');
-  const [value, setValue] = useState(0);
-  const [category, setCategory] = useState('');
-  const [type, setType] = useState('deposit');
+  const [title, setTitle] = useState('')
+  const [value, setValue] = useState(0)
+  const [category, setCategory] = useState('')
+  const [type, setType] = useState('deposit')
 
   function handleCreateNewTransaction(event: FormEvent) {
-    event.preventDefault();
+    event.preventDefault()
   }
 
   const data = {
@@ -29,9 +29,9 @@ export function NewTransactionModal({
     value,
     category,
     type,
-  };
+  }
 
-  api.post('/transactions', data);
+  api.post('/transactions', data)
 
   return (
     <Modal
@@ -68,7 +68,7 @@ export function NewTransactionModal({
           <RadioBoxButton
             type="button"
             onClick={() => {
-              setType('deposit');
+              setType('deposit')
             }}
             isActive={type === 'deposit'}
             activeColor="green"
@@ -80,7 +80,7 @@ export function NewTransactionModal({
           <RadioBoxButton
             type="button"
             onClick={() => {
-              setType('withdraw');
+              setType('withdraw')
             }}
             isActive={type === 'withdraw'}
             activeColor="red"
@@ -99,5 +99,5 @@ export function NewTransactionModal({
         <button type="submit">Cadastrar</button>
       </TransactionForm>
     </Modal>
-  );
+  )
 }
