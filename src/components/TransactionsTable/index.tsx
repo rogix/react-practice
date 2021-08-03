@@ -39,8 +39,7 @@ export function TransactionsTable() {
                 </td>
                 <td>{category}</td>
                 <td>
-                  {createdAt}
-                  {/* {new Intl.DateTimeFormat('en-US').format(new Date(createdAt))} */}
+                  {new Intl.DateTimeFormat('en-US').format(new Date(createdAt))}
                 </td>
               </tr>
             ),
