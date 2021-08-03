@@ -2,17 +2,8 @@ import { useContext } from 'react'
 import { TransactionsContext } from '../../TransactionsContext'
 import { TransactionsTableDiv } from './styles'
 
-type Props = {
-  id: number
-  type: string
-  title: string
-  amount: number
-  category: string
-  createdAt: Date
-}
-
 export function TransactionsTable() {
-  const transactions = useContext(TransactionsContext)
+  const { transactions } = useContext(TransactionsContext)
 
   return (
     <TransactionsTableDiv>
